@@ -145,6 +145,19 @@ class LinkedList{
         return temp.data;
     }
 
+    void updation(int val, int index){
+        if(index < 0 || index >= size){
+            System.out.println("Type Valid Index");
+            System.exit(-1);
+        }
+        else{
+            Node temp = head;
+            for(int i=0; i<index; i++)
+                temp = temp.next;
+            temp.data = val;
+        }
+    }
+
     /*Return size of a Linked List*/
     int size(){
         return size;
@@ -170,5 +183,8 @@ public class Main{
         System.out.println();
         System.out.println("Current size of linked list : " + list.size());
         System.out.println("Element at Index 2 : " + list.getElementAtIndex(2));
+        System.out.println("Updation Element at index 2 : " );
+        list.updation(200, 2);
+        list.display();
     }
 }
